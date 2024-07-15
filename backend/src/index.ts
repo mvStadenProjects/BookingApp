@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import userRoutes from "./routes/users";
+import authRoutes from "./routes/auth";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
@@ -22,8 +23,8 @@ app.use(cors());
 // app.get("/api/test", async (req: Request, res: Response) => {
 //   res.json({ message: "Hello from express endpoint" });
 // });
+app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-
 //start the server
 /* 7000 -> port number */
 app.listen(7000, () => {
