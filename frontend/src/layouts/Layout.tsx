@@ -11,7 +11,10 @@ const Layout = ({ children }: Props) => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <Hero />
-      <div className="container mx-auto py-10 flex-1">{children}</div>
+      <div className="container mx-auto py-10 flex-1">
+        <h1 className="text-5xl">YOUTIME TIME: 4:02:28</h1>
+        {children}
+      </div>
       <Footer />
     </div>
   );
